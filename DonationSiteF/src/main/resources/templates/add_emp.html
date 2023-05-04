@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.com">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+</head>
+<style>
+body{
+  background: url([[@{/images/addemp.jpg}]]) no-repeat;
+  background-size: cover ;
+  background-position: center;
+}
+</style>
+<body>
+  <div class="text-center text-white h-100 align-items-center d-flex" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 2), rgba(0, 0, 0,-1));  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;" >
+    <div class="container flex-grow-0">
+      <div class="">
+        <div class="text-center py-2 pt-3 text-body rounded-lg" style="">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="display-1 text-white mb-5">Order list</h1>
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-lg-3 col-6 p-4 text-white rounded-lg border-dark border-top border-bottom border-left" style="background-color: rgba(119,136,153,.3)"> <img class="img-fluid d-block rounded-circle" src="" th:src="@{/images/pg1.jpeg}" >
+                <p class="lead" style="">Biscuit Basket</p>
+                <h5 class=""><b>price : 150 rupees</b></h5>
+                <div class="row">
+                  <div class="col-md-12 mt-0 mb-0 w-25 border-0">
+                    <script style=""> function multiply() {
+                        var num1 = document.getElementById("num1").value;
+                        var num2 = 150; // Predefined value for the second number
+                        var result = num1 * num2;
+                        document.getElementById("result").innerHTML = "Total: " + result;
+                      }
+                   </script>
+                  </div>
+                </div>
+                <div class="form-group"><label></label></div>
+              </div>
+              <div class="col-lg-3 col-6 p-4 text-white rounded-lg border border-dark" style="background-color: rgba(119,136,153,.3)">
+                <img class="img-fluid d-block rounded-circle" src="" th:src="@{/images/milk.jpg}">
+                <p class="lead">Milk packets</p>
+                <h5 class=""><b>price : 100 rupees</b></h5>
+                <div class="row">
+                  <div class="col-md-12">
+                    <script style=""> function multiply() {
+                        var num3 = document.getElementById("num3").value;
+                        var num4 = 100; // Predefined value for the second number
+                        var result2 = num3 * num4;
+                        document.getElementById("result2").innerHTML = Result: +result2;
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-6 p-4 text-white rounded-lg border-dark border-top border-bottom" style="background-color: rgba(119,136,153,.3)">
+                <img class="img-fluid d-block rounded-circle" src="" th:src="@{/images/dry.jpg}" style="">
+                <p class="lead">Dry fruit basket</p>
+                <h5 class=""><b>price : 350 rupees</b></h5>
+              </div>
+              <div class="col-lg-3 col-6 p-4 text-white rounded-lg border border-dark" style="background-color: rgba(119,136,153,.3)">
+                <img class="img-fluid d-block rounded-circle" src="" th:src="@{/images/fruit.jpeg}">
+                <p class="lead">Fruits basket<br></p>
+                <h5 class=""><b>price : 250 rupees</b></h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="display-4" style=""><br></h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="shadow-none col-md-12 rounded-lg m-0 mt-1" style="background-color: rgba(0,0,0,0.4);">
+                <!-- imp part -->
+                <form class="form-inline" th:action="@{/register}" method="post">
+                  <div class="form-group" style="">
+                    <select id="numbers" name="id" class="w-100 border rounded" oninput="multiplyNumbers()"> &gt; <option value="select">select a product </option>
+                      <option value="1">Biscuit Basket</option>
+                      <option value="2">Milk</option>
+                      <option value="3">Fruits basket</option>
+                      <option value="4">Dry Fruit Basket</option>
+                    </select>
+                  </div>
+                  <div class="form-group m-0 w-25" style="">
+                    <input name="phone" class="form-control w-100 shadow-none mx-3" id="num" placeholder="Quantity" oninput="multiplyNumbers()">
+                    <input type="text" name="salary" class="form-control w-100 shadow-none mx-3" id="num" placeholder="Confirm final price">
+                  </div>
+                  <div class="col-md-5 col-1 rounded border-0" style="">
+                    <p id="result" style="" class="text-nowrap w-50 border rounded p-1 m-0 bg-white">Result:</p>
+                    <script style=""> function multiplyNumbers() {
+                        // get the selected number from the dropdown list
+                        /* let selected = Number(document.getElementById('numbers').value); */
+
+                        let selected = Number(document.getElementById('numbers').value);
+                        let mul = 0;
+                        if (selected == 1) {
+                          mul = 150;
+                        }
+                        else if (selected == 2) {
+                          mul = 100;
+                        }
+                        else if (selected == 3) {
+                          mul = 250;
+                        }
+                        else {
+                          mul = 350;
+                        }
+
+
+                        // get the value of the second input field
+                        let num = Number(document.getElementById('num').value);
+
+                        // multiply the two numbers
+                        let product = mul * num;
+
+                        // display the result on the page
+                        document.getElementById('result').innerHTML = "Result: " + product;
+                      }
+                    </script>
+                  </div>
+                  <input type="submit" value="Add to cart" class="bg-info" style="">
+                </form>
+                <!-- imp part -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-0 py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

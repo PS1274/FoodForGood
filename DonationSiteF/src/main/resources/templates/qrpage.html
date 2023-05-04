@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.com">
+    <head>
+        <meta charset="UTF-8">
+        <title>PAY NOW!</title>
+     
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+  <style th:inline="text">
+    @import url('https://fonts.googleapis.com/css?family=Poppins:300m400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    /* background: url('blureimg.png') no-repeat; */
+    
+    background: url([[@{/images/blureimg.png}]]) no-repeat;
+    background-size: cover ;
+    background-position: center;
+    
+}
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12.5%;
+    background:transparent ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.navbar a 
+{
+    position: relative;
+    font-size: 16px;
+    color: #e4e4e4;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+
+}
+.navbar a::after
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #e4e4e4;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transform: .5s ;
+}
+.navbar a:hover::after
+{
+    transform: translateY(0);
+    opacity: 1;
+
+}
+.wrapper
+{
+    height: 360px;
+    background: #fff;
+    max-width: 510px;
+    border-radius: 7px;
+    padding: 16px 25px;
+    transition: height 0.2s ease;
+}
+.wrapper.active
+{
+    height: 700px;
+}
+header h1
+{
+font-size: 21px;
+font-weight: 500;
+
+}
+header p
+{
+    margin-top: 5px;
+    color: #000000;
+    font-size: 16px;
+}
+.wrapper .phone
+{
+    margin: 20px 0 25px;
+}
+
+.phone :where(input)
+{
+    width: 100%;
+    height: 55px;
+    border :none;
+    outline: none;
+    border-radius: 5px;
+}
+.phone input
+{
+    font-size: 18px;
+    padding: 0 17px;
+    border: 1px solid #999;
+}
+.wrapper .form
+{
+    margin: 20px 0 25px;
+}
+.form :where(input,button)
+{
+    width: 100%;
+    height: 55px;
+    border :none;
+    outline: none;
+    border-radius: 5px;
+}
+.form input
+{
+    font-size: 18px;
+    padding: 0 17px;
+    border: 1px solid #999;
+}
+
+.form button
+{
+    color: #fff;
+    cursor: pointer;
+    background: black;
+    margin-top: 20px;
+    font-size: 17px;
+}
+.wrapper .qr-code
+{
+    display: flex;
+    padding: 33px 0;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+.wrapper .ok
+{
+    display: flex;
+    margin-top: 10px;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+.wrapper.active .qr-code
+{
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.05s ease;
+}
+.wrapper.active .ok
+{
+    width: 100%;
+    height: 45px;
+    background: #c4103d;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer ;
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.05s ease;
+}
+  </style>
+
+
+
+    <body>
+
+        <header class="header">
+            <nav class="navbar">
+                <a href="#">CART </a>
+                <a href="#">CONTACT</a>
+            </nav>
+            
+           </header>
+        <div class="wrapper">
+            <header>
+                
+                <h1>PAY THROUGH THE QR CODE</h1>
+                <P>ENTER YOUR UPI ID</P>
+            </header>
+
+            <div class="phone">
+                <input type="text" placeholder="enter your upi id">
+            </div>
+            <p>ENTER THE AMOUNT TO BE PAID</p>
+            <div class="form">
+                <input type="text" placeholder="enter the amount">
+                <button>PAY USING QR</button>
+            </div>
+            <div class="qr-code">
+                <img src="qr-code.png" alt="qr-code">
+                
+            </div>
+            <form action="thanks">
+            
+            <div><button class="ok">Confirm</button> </div>
+           </form>
+                
+           
+        </div>
+        <script>
+    function myfun() {
+    document.getElementById("myform").reset();
+    alert("Payment Successfull....thank you :)")
+}
+
+function pay() {
+  
+    alert("Payment Successfull....thank you :)")
+}
+
+const wrapper = document.querySelector(".wrapper"),
+upiInput=wrapper.querySelector(".phone input")
+qrInput = wrapper.querySelector(".form input"),
+generateBtn = wrapper.querySelector(".form button"),
+qrImg = wrapper.querySelector(".qr-code img");
+
+generateBtn.addEventListener("click",() => {
+    let upiValue = upiInput.value;
+
+    let qrValue = qrInput.value;
+    console.log(qrValue);
+    if(!upiValue && !qrValue){alert("KINDLY ENTER THE DETAILS!");return;}
+   else if(!upiValue){alert("KINDLY ENTER THE UPI ID");return;}
+   else  if(!qrValue) { alert("KINDLY ENTER THE AMOUNT)");return;}
+    generateBtn.innerText="Generating QR CODE . . .";
+     qrImg.src=` https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrValue} `;
+     qrImg.addEventListener("load", () =>{
+    wrapper.classList.add("active");
+    generateBtn.innerText="PAY USING QR";
+});
+});
+</script>
+    </body>
+</html>

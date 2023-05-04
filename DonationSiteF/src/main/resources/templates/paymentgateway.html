@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>payment gatway</title>
+        
+        <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+     
+    </head>
+    <style>
+        body {
+    width: 100%;
+    height: 100vh;
+      background: url([[@{/images/blureimg.png}]]) no-repeat;
+    background-size: cover ;
+    background-position: center;
+    background-color: rgb(32, 111, 184);
+}
+.navbar{
+    
+    margin: 0;  
+    padding: 8px 5px;
+
+    
+}
+.navbar > ul{
+    list-style-type: none;
+
+}
+.navbar > ul > li{
+    font-size: larger;
+    
+    
+}
+.navbar > ul > li >a{
+    
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+   
+    
+}
+.display-6
+{
+    color: #e4e4e4;
+}
+.rounded {
+    border-radius: 1rem
+}
+
+.nav-pills .nav-link {
+    color: #555
+}
+
+.nav-pills .nav-link.active {
+    color: white
+}
+
+input[type="radio"] {
+    margin-right: 5px
+}
+.btn{
+      margin-top: 25px;
+       background-color: #ff4e08;
+        color: #fff;
+        border: none;
+        padding: 15px 40px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 25px;
+        box-shadow: 0 8px 16px rgba(247, 102, 12, 0.958);}
+
+.bold {
+    font-weight: bold
+}
+    </style>
+    <script>
+        function myfun() {
+ 
+}
+
+function pay() {
+  
+   
+}
+    </script>
+   <!DOCTYPE html>
+   <html lang="en">
+       <head>
+           <meta charset="UTF-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>payment gatway</title>
+           <link rel="stylesheet" href="payment.css">
+           <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+           <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+           <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+           <script src="pay.js"></script>
+       </head>
+       <body style="background-color:rgb(158, 180, 190);" oncontextmenu='return false' class='snippet-body'>
+           <nav class="navbar">
+               <ul>
+                   <li>
+                   <form action="contactus">
+                   <button class="btn">Help</button>
+                   </form></li>
+               </ul>
+           </nav>
+           <div class="container py-5">
+               <!-- For demo purpose -->
+               <div class="row mb-4">
+                   <div class="col-lg-8 mx-auto text-center">
+                       <h1 class="display-6">Payment Methods</h1>
+                   </div>
+               </div> <!-- End -->
+               <div class="row">
+                   <div class="col-lg-6 mx-auto">
+                       <div class="card ">
+                           <div class="card-header">
+                               <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                   <!-- Credit card form tabs -->
+                                   <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                       <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> PAYTM </a> </li>
+                               </div> <!-- End -->
+                               <!-- Credit card form content -->
+                               <div class="tab-content">
+                                   <!-- credit card info-->
+                                   <div id="credit-card" class="tab-pane fade show active pt-3">
+               
+                                       <form  method ="post" action="detail" id="myform" >
+                                           <label for="FirstName">
+                                               <h6>Name</h6>
+                                               <input type="text" name="Firstname" placeholder="First name" required>
+                                           </label>
+                                           <label for="lastname">
+                                               <h6>Last Name</h6>
+                                               <input type="text" name="lastname" placeholder="Lastname" required>
+                                           </label><br>
+                                           <label for="email">
+                                               <h6>Amount</h6>
+                                               <input type="number" name="amount" placeholder="in rupees" required>
+                                           </label><br>
+                                           <label for="mobno.">
+                                               <h6>Mobile No.</h6>
+                                               <input type="number" name="cid" placeholder="last 5 digits" required>
+                                               <p class="text-muted">Mobile number which is link to bank account</p>
+                                           </label>
+                                          
+                                           <p><input class="btn btn-primary "type="submit" value="Proceed to pay"/></p>
+                                           <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                                    
+                                       </form>
+               
+               
+                                   </div>
+                               </div > <!-- End -->
+                               <!-- Paypal info -->
+                              
+                               <!-- bank transfer info -->
+                               
+                               <!-- End -->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+               <script type='text/javascript' src=''></script>
+               <script type='text/javascript' src=''></script>
+               <script type='text/Javascript'>$(function() {
+                   $('[data-toggle="tooltip"]').tooltip()})
+                   </script>
+   
+                  
+              
+       </body>
+   </html>
